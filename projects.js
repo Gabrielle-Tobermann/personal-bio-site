@@ -43,8 +43,10 @@ const createProjectCards = (arr) => {
   
 };
 
+console.log(projects);
+
 const init = () => {
-  createProjectCards();
+  createProjectCards(projects);
 }
 
 init();
