@@ -19,8 +19,8 @@ const projects = [
       "HTML, CSS, Vanilla JavaScript, Version Control with Github",
     available: false,
     url: "https://github.com/nss-evening-cohort-8/js-part-deux", // Towards the latter part of the class, you will learn how to host your projects and people will be able to view them live. Cool, right? Welp, until then, just use your GitHub link in this spot as well.
-    githubUrl: "https://github.com/nss-evening-cohort-8/js-part-deux"
-  }
+    githubUrl: "https://github.com/nss-evening-cohort-8/js-part-deux",
+  },
 ];
 
 const printToDom = (divId, textToPrint) => {
@@ -30,10 +30,11 @@ const printToDom = (divId, textToPrint) => {
 
 const createProjectCards = (arr) => {
   let domString = "";
-  
+
   for (let i = 0; i < arr.length; i++) { 
+    if (arr[i].available === true) {
     
-    domString += `<div class="card my-2" style="width: 18rem;" id=${i}>
+      domString += `<div class="card my-2" style="width: 18rem;" id=${i}>
     <div class="img-container" style="background-image: url('${arr[i].screenshot}');"></div>
     <div class="card-body">
       <p class="card-text">${arr[i].title}</p>
@@ -45,31 +46,16 @@ const createProjectCards = (arr) => {
       
     </div>
   </div>`;
-    
+    }
   }
-  
 
-  printToDom('#projectsPage', domString);
+  printToDom("#projectsPage", domString);
 };
 
 //console.log(projects);
 
-const availableProjects = () => {
-  for (let i = 0; i < arr.length; i++) {
-    if (projects[i].available === 'false') {
-      projects.splice(projects[i], 1);
-    }
-  }
-};
-
-
-
-
 const init = () => {
   createProjectCards(projects);
-  availableProjects();
-
-  
 };
 
 init();
