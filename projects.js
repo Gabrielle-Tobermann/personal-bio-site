@@ -1,27 +1,27 @@
-console.log('CONNECTED');
+console.log("CONNECTED");
 
-const projects = [ 
+const projects = [
   {
-  title: "Cool Project", 
-  screenshot: "http://gotoflashgames.com/files/file/033.jpg", 
-  description: "This is the best project", // A good project description includes 'the what', 'the why', and 'the how'.
-  technologiesUsed: "HTML, CSS, Vanilla JavaScript, Version Control with Github",
-  available: true,
-  url: "https://github.com/nss-evening-cohort-8/js-part-deux", // Towards the latter part of the class, you will learn how to host your projects and people will be able to view them live. Cool, right? Welp, until then, just use your GitHub link in this spot as well.
-  githubUrl: "https://github.com/nss-evening-cohort-8/js-part-deux"
-},
-
+    title: "Cool Project",
+    screenshot: "http://gotoflashgames.com/files/file/033.jpg",
+    description: "This is the best project", // A good project description includes 'the what', 'the why', and 'the how'.
+    technologiesUsed:
+      "HTML, CSS, Vanilla JavaScript, Version Control with Github",
+    available: true,
+    url: "https://github.com/nss-evening-cohort-8/js-part-deux", // Towards the latter part of the class, you will learn how to host your projects and people will be able to view them live. Cool, right? Welp, until then, just use your GitHub link in this spot as well.
+    githubUrl: "https://github.com/nss-evening-cohort-8/js-part-deux",
+  },
 ];
 
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.querySelector(divId);
   selectedDiv.innerHTML = textToPrint;
-}
+};
 
 const createProjectCards = (arr) => {
-  let domString = '';
+  let domString = "";
 
-  for (i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     domString += `<div class="card my-2" style="width: 18rem;" id=${i}>
     <div class="img-container" style="background-image: url('${arr[i].screenshot}');"></div>
     <div class="card-body">
@@ -34,19 +34,14 @@ const createProjectCards = (arr) => {
       
     </div>
   </div>`;
-
-    if (arr[i].available === 'true') {
-      printToDom('#ProjectsPage', domString);
-    }  
-
-  };
-  
+  }
+  printToDom('#projectsPage', domString);
 };
 
 console.log(projects);
 
 const init = () => {
   createProjectCards(projects);
-}
+};
 
 init();
