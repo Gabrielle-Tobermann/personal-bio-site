@@ -2,6 +2,58 @@ body {
   background-color: white;
 }
 
+nav {
+  background-color: #004221;
+  color: white;
+  
+}
+
+h1 {
+  padding: 30px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#navLinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none; 
+}
+
+#navLinks li {
+  padding-left:50px;
+  padding-right: 50px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-family: 'Courgette', cursive;
+}
+
+#bioPage {
+  font-family: 'Times New Roman', Times, serif;
+  padding: 20px;
+  font-size: 18px;
+}
+
+#technologiesPage ul {
+  display: flex;
+  flex-wrap: row wrap;
+}
+
+#technologiesPage li {
+  list-style-type: none;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
 #projectsPage {
-  height: 300px;
+  height: 400px;
+  padding: 20px;
+  display: flex;
+}
+
+.page-footer {
+  font-family: 'Times New Roman', Times, serif;
+  padding-left: 20px;
 }
